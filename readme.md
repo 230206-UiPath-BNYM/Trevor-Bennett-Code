@@ -1,1 +1,2 @@
-Hi Trevor, this is my file now. Trevor said an interesting fact about him is that he likes to code. 
+Trevor is self taught in programming and he didn't take any CS classes in college. 
+ -Irv G Feb72023
