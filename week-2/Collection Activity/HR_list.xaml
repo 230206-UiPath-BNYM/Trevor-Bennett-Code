@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="HR_list" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="954.4,1253.6" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.Collections;assembly=System.Private.CoreLib" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:uasc="clr-namespace:UiPath.Activities.System.Collections;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="HR_list" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="954.4,1125.6" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.Collections;assembly=System.Private.CoreLib" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:uasc="clr-namespace:UiPath.Activities.System.Collections;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="52">
       <x:String>System.Activities</x:String>
@@ -80,7 +80,7 @@
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="HR_list" sap:VirtualizedContainerService.HintSize="497.6,1188.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="HR_list" sap:VirtualizedContainerService.HintSize="497.6,1060.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(x:String)" Name="New_Employees">
         <Variable.Default>
@@ -94,14 +94,14 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeCode ContinueOnError="{x:Null}" Code="New_Employees.Add(&quot;Batman&quot;);&#xD;&#xA;New_Employees.Add(&quot;Superman&quot;);&#xD;&#xA;New_Employees.Add(&quot;Average Joe&quot;);" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="435.2,164.8" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="Console.WriteLine(&quot;HR_List!&quot;);&#xD;&#xA;New_Employees.Add(&quot;Batman&quot;);&#xD;&#xA;New_Employees.Add(&quot;Superman&quot;);&#xD;&#xA;New_Employees.Add(&quot;Average Joe&quot;);" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="435.2,164.8" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
       <ui:InvokeCode.Arguments>
         <InOutArgument x:TypeArguments="scg:List(x:String)" x:Key="New_Employees">
           <CSharpReference x:TypeArguments="scg:List(x:String)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">New_Employees</CSharpReference>
         </InOutArgument>
       </ui:InvokeCode.Arguments>
     </ui:InvokeCode>
-    <uasc:ExistsInCollection x:TypeArguments="x:String" Index="{x:Null}" DisplayName="Exists in collection" sap:VirtualizedContainerService.HintSize="435.2,300" sap2010:WorkflowViewState.IdRef="ExistsInCollection`1_2" Item="Grandma">
+    <uasc:ExistsInCollection x:TypeArguments="x:String" Index="{x:Null}" DisplayName="Exists in collection" sap:VirtualizedContainerService.HintSize="435.2,172" sap2010:WorkflowViewState.IdRef="ExistsInCollection`1_2" Item="Grandma">
       <uasc:ExistsInCollection.Collection>
         <InArgument x:TypeArguments="scg:ICollection(x:String)">
           <CSharpValue x:TypeArguments="scg:ICollection(x:String)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_2">New_Employees</CSharpValue>
@@ -113,7 +113,7 @@
         </OutArgument>
       </uasc:ExistsInCollection.Exists>
     </uasc:ExistsInCollection>
-    <ui:InvokeCode ContinueOnError="{x:Null}" Code="if (!gmExist){&#xD;&#xA;&#x9;New_Employees.Add(&quot;Grandma&quot;);&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;New_Employees.Remove(&quot;Average Joe&quot;);" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="435.2,164.8" sap2010:WorkflowViewState.IdRef="InvokeCode_2" Language="CSharp">
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="if (!gmExist){&#xA;&#x9;New_Employees.Add(&quot;Grandma&quot;);&#xA;}&#xA;&#xA;New_Employees.Remove(&quot;Average Joe&quot;);" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="435.2,164.8" sap2010:WorkflowViewState.IdRef="InvokeCode_2" Language="CSharp">
       <ui:InvokeCode.Arguments>
         <InOutArgument x:TypeArguments="scg:List(x:String)" x:Key="New_Employees">
           <CSharpReference x:TypeArguments="scg:List(x:String)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">New_Employees</CSharpReference>
