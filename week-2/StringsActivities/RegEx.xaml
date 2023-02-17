@@ -1,6 +1,6 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="RegEx" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="899.2,1427.2" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="RegEx" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="899.2,2122.4" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="34">
+    <scg:List x:TypeArguments="x:String" Capacity="72">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -35,10 +35,13 @@
       <x:String>System.Xml.Serialization</x:String>
       <x:String>UiPath.Shared.Activities.Business</x:String>
       <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>UiPath.Excel.Activities.Business.Filter</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="94">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="62">
       <AssemblyReference>Microsoft.CSharp</AssemblyReference>
       <AssemblyReference>System</AssemblyReference>
       <AssemblyReference>System.Core</AssemblyReference>
@@ -86,9 +89,23 @@
       <AssemblyReference>System.Private.Xml</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
       <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="RegEx" sap:VirtualizedContainerService.HintSize="601.6,1362.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="RegEx" sap:VirtualizedContainerService.HintSize="732,2057.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="wholeSheet" />
     </Sequence.Variables>
@@ -97,19 +114,19 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="539.2,1250.4" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="ApplicantInfo.xlsx">
+    <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="765.6,2810.4" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="ApplicantInfo.xlsx">
       <ueab:ExcelApplicationCard.Body>
         <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="AppInfo" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="505.6,980.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="732,2540.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ueab:ReadRangeX DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="443.2,169.6" sap2010:WorkflowViewState.IdRef="ReadRangeX_1">
+            <ueab:ReadRangeX DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="669.6,169.6" sap2010:WorkflowViewState.IdRef="ReadRangeX_1">
               <ueab:ReadRangeX.Range>
                 <InArgument x:TypeArguments="ue:IReadRangeRef">
                   <CSharpValue x:TypeArguments="ue:IReadRangeRef" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">AppInfo.Sheet["Sheet1"].Range["A1:F7"]</CSharpValue>
@@ -121,32 +138,185 @@
                 </OutArgument>
               </ueab:ReadRangeX.SaveTo>
             </ueab:ReadRangeX>
-            <ueab:ExcelForEachRowX DisplayName="For Each Excel Row" EmptyRowBehavior="Stop" HasHeaders="True" sap:VirtualizedContainerService.HintSize="443.2,289.6" sap2010:WorkflowViewState.IdRef="ExcelForEachRowX_1" SaveAfterEachRow="False">
+            <ueab:WriteCellX DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="669.6,160" sap2010:WorkflowViewState.IdRef="WriteCellX_4">
+              <ueab:WriteCellX.Cell>
+                <InArgument x:TypeArguments="ue:IReadWriteCellRef">
+                  <CSharpValue x:TypeArguments="ue:IReadWriteCellRef" sap2010:WorkflowViewState.IdRef="CSharpValue`1_25">AppInfo.Sheet["Sheet1"].Cell["E6"]</CSharpValue>
+                </InArgument>
+              </ueab:WriteCellX.Cell>
+              <ueab:WriteCellX.Value>
+                <InArgument x:TypeArguments="x:Object">
+                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_26">0000</CSharpValue>
+                </InArgument>
+              </ueab:WriteCellX.Value>
+            </ueab:WriteCellX>
+            <ueab:ExcelForEachRowX DisplayName="For Each Excel Row" EmptyRowBehavior="Stop" HasHeaders="True" sap:VirtualizedContainerService.HintSize="669.6,1770.4" sap2010:WorkflowViewState.IdRef="ExcelForEachRowX_1" SaveAfterEachRow="False">
               <ueab:ExcelForEachRowX.Body>
                 <ActivityAction x:TypeArguments="ue:CurrentRowQuickHandle, x:Int32">
                   <ActivityAction.Argument1>
-                    <DelegateInArgument x:TypeArguments="ue:CurrentRowQuickHandle" Name="CurrentRow" />
+                    <DelegateInArgument x:TypeArguments="ue:CurrentRowQuickHandle" Name="row" />
                   </ActivityAction.Argument1>
                   <ActivityAction.Argument2>
                     <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
                   </ActivityAction.Argument2>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,104.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="636,1585.6" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="x:Boolean" Name="validEmail" />
+                      <Variable x:TypeArguments="x:Boolean" Name="validPhone" />
+                      <Variable x:TypeArguments="x:Boolean" Name="validSSN" />
+                      <Variable x:TypeArguments="x:Boolean" Name="phoneMail" />
+                    </Sequence.Variables>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
+                    <ui:IsMatch BuilderPattern="((?&gt;[a-zA-Z\d!#$%&amp;'*+\-\/=?^_`{|}~]+\x20*|&quot;((?=[\x01-\x7f])[^&quot;\\]|\\[\x01-\x7f])*&quot;\x20*)*(?&lt;angle&gt;&lt;))?((?!\.)(?&gt;\.?[a-zA-Z\d!#$%&amp;'*+\-\/=?^_`{|}~]+)+|&quot;((?=[\x01-\x7f])[^&quot;\\]|\\[\x01-\x7f])*&quot;)@(((?!-)[a-zA-Z\d\-]+(?&lt;!-)\.)+[a-zA-Z]{2,}|\[(((?(?&lt;!\[)\.)(25[0-5]|2[0-4]\d|[01]?\d?\d)){4}|[a-zA-Z\d\-]*[a-zA-Z\d]:((?=[\x01-\x7f])[^\\\[\]]|\\[\x01-\x7f])+)\])(?(angle)&gt;)" DisplayName="Is Match -- Valid Email" sap:VirtualizedContainerService.HintSize="573.6,60" sap2010:WorkflowViewState.IdRef="IsMatch_1" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;EMAIL&quot;,&quot;OperationName&quot;:&quot;Email&quot;,&quot;OperationValue&quot;:&quot;((?&gt;[a-zA-Z\\d!#$%&amp;'*+\\-\\\/=?^_`{|}~]+\\x20*|\&quot;((?=[\\x01-\\x7f])[^\&quot;\\\\]|\\\\[\\x01-\\x7f])*\&quot;\\x20*)*(?&lt;angle&gt;&lt;))?((?!\\.)(?&gt;\\.?[a-zA-Z\\d!#$%&amp;'*+\\-\\\/=?^_`{|}~]+)+|\&quot;((?=[\\x01-\\x7f])[^\&quot;\\\\]|\\\\[\\x01-\\x7f])*\&quot;)@(((?!-)[a-zA-Z\\d\\-]+(?&lt;!-)\\.)+[a-zA-Z]{2,}|\\[(((?(?&lt;!\\[)\\.)(25[0-5]|2[0-4]\\d|[01]?\\d?\\d)){4}|[a-zA-Z\\d\\-]*[a-zA-Z\\d]:((?=[\\x01-\\x7f])[^\\\\\\[\\]]|\\\\[\\x01-\\x7f])+)\\])(?(angle)&gt;)&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="((?&gt;[a-zA-Z\d!#$%&amp;'*+\-\/=?^_`{|}~]+\x20*|&quot;((?=[\x01-\x7f])[^&quot;\\]|\\[\x01-\x7f])*&quot;\x20*)*(?&lt;angle&gt;&lt;))?((?!\.)(?&gt;\.?[a-zA-Z\d!#$%&amp;'*+\-\/=?^_`{|}~]+)+|&quot;((?=[\x01-\x7f])[^&quot;\\]|\\[\x01-\x7f])*&quot;)@(((?!-)[a-zA-Z\d\-]+(?&lt;!-)\.)+[a-zA-Z]{2,}|\[(((?(?&lt;!\[)\.)(25[0-5]|2[0-4]\d|[01]?\d?\d)){4}|[a-zA-Z\d\-]*[a-zA-Z\d]:((?=[\x01-\x7f])[^\\\[\]]|\\[\x01-\x7f])+)\])(?(angle)&gt;)" RegexOption="IgnoreCase, Compiled">
+                      <ui:IsMatch.Input>
+                        <InArgument x:TypeArguments="x:String">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">row.ByField["Email"]</CSharpValue>
+                        </InArgument>
+                      </ui:IsMatch.Input>
+                      <ui:IsMatch.Result>
+                        <OutArgument x:TypeArguments="x:Boolean">
+                          <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">validEmail</CSharpReference>
+                        </OutArgument>
+                      </ui:IsMatch.Result>
+                    </ui:IsMatch>
+                    <ui:IsMatch BuilderPattern="([0-9]( |-)?)?(\(?[0-9]{3}\)?|[0-9]{3})( |-)?([0-9]{3}( |-)?[0-9]{4}|[a-zA-Z0-9]{7})" DisplayName="Is Match -- Valid Phone#" sap:VirtualizedContainerService.HintSize="573.6,60" sap2010:WorkflowViewState.IdRef="IsMatch_2" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;USPHONE&quot;,&quot;OperationName&quot;:&quot;US phone number&quot;,&quot;OperationValue&quot;:&quot;([0-9]( |-)?)?(\\(?[0-9]{3}\\)?|[0-9]{3})( |-)?([0-9]{3}( |-)?[0-9]{4}|[a-zA-Z0-9]{7})&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="([0-9]( |-)?)?(\(?[0-9]{3}\)?|[0-9]{3})( |-)?([0-9]{3}( |-)?[0-9]{4}|[a-zA-Z0-9]{7})" RegexOption="IgnoreCase, Compiled">
+                      <ui:IsMatch.Input>
+                        <InArgument x:TypeArguments="x:String">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">row.ByField["Phone Number"]</CSharpValue>
+                        </InArgument>
+                      </ui:IsMatch.Input>
+                      <ui:IsMatch.Result>
+                        <OutArgument x:TypeArguments="x:Boolean">
+                          <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">validPhone</CSharpReference>
+                        </OutArgument>
+                      </ui:IsMatch.Result>
+                    </ui:IsMatch>
+                    <ui:IsMatch BuilderPattern="^(?!666|000|9\d{2})\d{3}-?(?!00)\d{2}-?(?!0{4})\d{4}$" DisplayName="Is Match" sap:VirtualizedContainerService.HintSize="573.6,60" sap2010:WorkflowViewState.IdRef="IsMatch_3" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;LIT&quot;,&quot;OperationName&quot;:&quot;Literal&quot;,&quot;OperationValue&quot;:&quot;^(?!666|000|9\\d{2})\\d{3}-?(?!00)\\d{2}-?(?!0{4})\\d{4}$&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="^(?!666|000|9\d{2})\d{3}-?(?!00)\d{2}-?(?!0{4})\d{4}$" RegexOption="IgnoreCase, Compiled">
+                      <ui:IsMatch.Input>
+                        <InArgument x:TypeArguments="x:String">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">row.ByField["SSN"]</CSharpValue>
+                        </InArgument>
+                      </ui:IsMatch.Input>
+                      <ui:IsMatch.Result>
+                        <OutArgument x:TypeArguments="x:Boolean">
+                          <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">validSSN</CSharpReference>
+                        </OutArgument>
+                      </ui:IsMatch.Result>
+                    </ui:IsMatch>
+                    <Assign sap:VirtualizedContainerService.HintSize="573.6,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:Boolean">
+                          <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_5">phoneMail</CSharpReference>
+                        </OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:Boolean">
+                          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">(validEmail &amp; validPhone)</CSharpValue>
+                        </InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <If sap:VirtualizedContainerService.HintSize="573.6,1073.6" sap2010:WorkflowViewState.IdRef="If_1">
+                      <If.Condition>
+                        <InArgument x:TypeArguments="x:Boolean">
+                          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9">phoneMail &amp; validSSN</CSharpValue>
+                        </InArgument>
+                      </If.Condition>
+                      <If.Then>
+                        <Sequence sap:VirtualizedContainerService.HintSize="496,623.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                          <Sequence.Variables>
+                            <Variable x:TypeArguments="x:String" Name="rawTxt" />
+                            <Variable x:TypeArguments="x:String" Name="personalEmail" />
+                          </Sequence.Variables>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ueab:WriteCellX AutoIncrementRow="True" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="433.6,160" sap2010:WorkflowViewState.IdRef="WriteCellX_2">
+                            <ueab:WriteCellX.Cell>
+                              <InArgument x:TypeArguments="ue:IReadWriteCellRef">
+                                <CSharpValue x:TypeArguments="ue:IReadWriteCellRef" sap2010:WorkflowViewState.IdRef="CSharpValue`1_12">row.ByField["Valid Candidate"]</CSharpValue>
+                              </InArgument>
+                            </ueab:WriteCellX.Cell>
+                            <ueab:WriteCellX.Value>
+                              <InArgument x:TypeArguments="x:Object">
+                                <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">"VALID"</CSharpValue>
+                              </InArgument>
+                            </ueab:WriteCellX.Value>
+                          </ueab:WriteCellX>
+                          <ui:ReadTextFile File="{x:Null}" DisplayName="Read Text File" FileName="ApplicantEmail.txt" sap:VirtualizedContainerService.HintSize="433.6,80.8" sap2010:WorkflowViewState.IdRef="ReadTextFile_1">
+                            <ui:ReadTextFile.Content>
+                              <OutArgument x:TypeArguments="x:String">
+                                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_6">rawTxt</CSharpReference>
+                              </OutArgument>
+                            </ui:ReadTextFile.Content>
+                          </ui:ReadTextFile>
+                          <ui:Replace BuilderPattern=" &lt;Applicant_Name&gt;" sap:VirtualizedContainerService.HintSize="433.6,60" sap2010:WorkflowViewState.IdRef="Replace_1" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;LIT&quot;,&quot;OperationName&quot;:&quot;Literal&quot;,&quot;OperationValue&quot;:&quot; &lt;Applicant_Name&gt;&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="&lt;Applicant_Name&gt;" RegexOption="IgnoreCase, Compiled">
+                            <ui:Replace.Input>
+                              <InArgument x:TypeArguments="x:String">
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_16">rawTxt</CSharpValue>
+                              </InArgument>
+                            </ui:Replace.Input>
+                            <ui:Replace.Replacement>
+                              <InArgument x:TypeArguments="x:String">
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_17">row.ByField["First Name"] + " " + row.ByField["Last Name"]</CSharpValue>
+                              </InArgument>
+                            </ui:Replace.Replacement>
+                            <ui:Replace.Result>
+                              <OutArgument x:TypeArguments="x:String">
+                                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_7">personalEmail</CSharpReference>
+                              </OutArgument>
+                            </ui:Replace.Result>
+                          </ui:Replace>
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="433.6,90.4" sap2010:WorkflowViewState.IdRef="WriteLine_1">
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_18">personalEmail</CSharpValue>
+                            </InArgument>
+                          </WriteLine>
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence sap:VirtualizedContainerService.HintSize="496,272" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ueab:WriteCellX AutoIncrementRow="True" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="433.6,160" sap2010:WorkflowViewState.IdRef="WriteCellX_3">
+                            <ueab:WriteCellX.Cell>
+                              <InArgument x:TypeArguments="ue:IReadWriteCellRef">
+                                <CSharpValue x:TypeArguments="ue:IReadWriteCellRef" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">row.ByField["Valid Candidate"]</CSharpValue>
+                              </InArgument>
+                            </ueab:WriteCellX.Cell>
+                            <ueab:WriteCellX.Value>
+                              <InArgument x:TypeArguments="x:Object">
+                                <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">"INVALID"</CSharpValue>
+                              </InArgument>
+                            </ueab:WriteCellX.Value>
+                          </ueab:WriteCellX>
+                        </Sequence>
+                      </If.Else>
+                    </If>
                   </Sequence>
                 </ActivityAction>
               </ueab:ExcelForEachRowX.Body>
               <ueab:ExcelForEachRowX.Range>
                 <InArgument x:TypeArguments="ue:IReadRangeRef">
-                  <CSharpValue x:TypeArguments="ue:IReadRangeRef" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">AppInfo.Sheet["Sheet1"].Range["A1:E6"]</CSharpValue>
+                  <CSharpValue x:TypeArguments="ue:IReadRangeRef" sap2010:WorkflowViewState.IdRef="CSharpValue`1_14">AppInfo.Sheet["Sheet1"].Range["A1:F6"]</CSharpValue>
                 </InArgument>
               </ueab:ExcelForEachRowX.Range>
             </ueab:ExcelForEachRowX>
-            <ui:ReadTextFile Content="{x:Null}" File="{x:Null}" FileName="{x:Null}" DisplayName="Read Text File" sap:VirtualizedContainerService.HintSize="443.2,80.8" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
-            <ueab:SaveExcelFileAsX FilePath="{x:Null}" Workbook="{x:Null}" DisplayName="Save Excel File As" sap:VirtualizedContainerService.HintSize="443.2,208.8" sap2010:WorkflowViewState.IdRef="SaveExcelFileAsX_1" SaveAsFileType="OpenXmlWorkbook" />
+            <ueab:SaveExcelFileAsX DisplayName="Save Excel File As" FilePath="AppInfo.xlsx" sap:VirtualizedContainerService.HintSize="669.6,208.8" sap2010:WorkflowViewState.IdRef="SaveExcelFileAsX_1" SaveAsFileType="OpenXmlWorkbook">
+              <ueab:SaveExcelFileAsX.Workbook>
+                <InArgument x:TypeArguments="ue:IWorkbookQuickHandle">
+                  <CSharpValue x:TypeArguments="ue:IWorkbookQuickHandle" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15">AppInfo</CSharpValue>
+                </InArgument>
+              </ueab:SaveExcelFileAsX.Workbook>
+            </ueab:SaveExcelFileAsX>
           </Sequence>
         </ActivityAction>
       </ueab:ExcelApplicationCard.Body>
