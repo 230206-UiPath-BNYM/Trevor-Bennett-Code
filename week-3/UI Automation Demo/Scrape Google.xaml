@@ -1,0 +1,123 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Scrape_Google" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="485.6,1179.2" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="46">
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Scrape_Google" sap:VirtualizedContainerService.HintSize="496,1114.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: weather in tpa - Search" sap:VirtualizedContainerService.HintSize="433.6,1002.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="2e77a506-7676-4256-bc4d-db2a7ec5b721" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,785.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="337.6,178.4" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" ScopeIdentifier="2e77a506-7676-4256-bc4d-db2a7ec5b721" Shortcuts="[d(hk)][k(f11)][u(hk)]" Version="V3" />
+            <uix:NTakeScreenshot DisplayName="Take Screenshot 'Tampa International'" FileName="screenshot.png" FileNameMode="DateTime" sap:VirtualizedContainerService.HintSize="337.6,233.6" sap2010:WorkflowViewState.IdRef="NTakeScreenshot_1" ScopeIdentifier="2e77a506-7676-4256-bc4d-db2a7ec5b721" Version="V3">
+              <uix:NTakeScreenshot.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.bing.com/search?q=weather+in+tpa&amp;form=ANSPH1&amp;refig=f65fedfda42e4ca49b15e724190df4f8&amp;pc=U531&amp;sp=1&amp;asbe=MT&amp;qs=WA&amp;pq=weather+in+tpa&amp;sc=2-14&amp;cvid=f65fedfda42e4ca49b15e724190df4f8" DesignTimeRectangle="200, 86, 810, 741" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'Tampa International'" FullSelectorArgument="&lt;webctrl parentid='b_results' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='b_results' tag='DIV' type='' class='wtr_core b_topBleed b_sideBleed b_bottomBleed wnoPrec cursorPointer' aaname='' /&gt;" Guid="651c7040-83d2-417d-9da9-6c0df48110cd" InformativeScreenshot="8b652ab73fcc3392367dc5fa5c943cbc.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='weather in tpa - Search' /&gt;" SearchSteps="FuzzySelector" Version="V1" Visibility="Interactive" />
+              </uix:NTakeScreenshot.Target>
+            </uix:NTakeScreenshot>
+            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="337.6,178.4" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_2" ScopeIdentifier="2e77a506-7676-4256-bc4d-db2a7ec5b721" Shortcuts="[d(hk)][k(f11)][u(hk)]" Version="V3" />
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAE1SURBVFhH7ZXrccMgEIRVAiW4FDcU5A6SDqwOlEIiUYLcgUux99AqgF5BmMkf883c2HN3HMvxUFUoFGJRF3NW+qdRur/DHrRB1V2L2Ilp+UFxpWpz9SZdt7q7Si6H5cFOrrvb6oTrNmQVsVj5R28wwXmaxP7X/XeQg07Ywa+C4qegsO6+GFogsSAXwhhKBwfOraw2Ld2b2O44EQ3d6aDI8FswYkXcjknAne50vGIPunaBABzYY2N28YtJcbp38cfQlQ6KuAfn+BYMdKeDIvLqjQVxwOje5Oih/ZPZimDmk6EFEgtycz3NKOa6IDa++3Y78KusyPD6RXUrGjuJfx2jbbtbh6GIsBNrNu9EThEChMjTLAfN74jclEa2wubMn+TcImIoIibmIuj+X5yI7U95ofDuVNUToEN3Uyyxs3sAAAAASUVORK5CYII=" InformativeScreenshot="70e4c7c87217f7fc86d54e5b6c5a2628.jpg" Selector="&lt;html app='msedge.exe' title='weather in tpa - Search' /&gt;" Title="weather in tpa - Search" Url="https://www.bing.com/search?q=weather+in+tpa&amp;form=ANSPH1&amp;refig=f65fedfda42e4ca49b15e724190df4f8&amp;pc=U531&amp;sp=1&amp;asbe=MT&amp;qs=WA&amp;pq=weather+in+tpa&amp;sc=2-14&amp;cvid=f65fedfda42e4ca49b15e724190df4f8" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
